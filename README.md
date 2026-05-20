@@ -5,25 +5,52 @@
 ## 安装
 
 ```bash
-# 一键安装全部 skills
 npx skills add Jingyun734/compound-skills -y -g
 ```
 
-或按需安装单个 skill：
+## 分类
 
-```bash
-install_skill(github_url="https://github.com/Jingyun734/compound-skills/blob/main/skills/compound-setup/SKILL.md", user_requested=true)
-```
+### 自定义核心
 
-## Skills
+项目启动、文档摄取、评估、规划、智能体交互等核心工作流。
 
 | Skill | 用途 |
 |-------|------|
 | compound-setup | 系统初始化：一步加载所有核心 skill |
 | project-startup | 新项目启动流程 |
-| evaluator | 评估器：质疑+结构化反馈 |
-| analogy | 比喻：将抽象语言转化为用户可理解的描述 |
-| translator | 翻译：用项目语言将需求转化为需求文档 |
-| planner | 规划：拆解需求为可执行 task 方案 |
-| agent-interaction | 智能体交互：多代理协调与质量保障 |
 | feishu-doc-ingest | 飞书文档摄取→Markdown raw |
+| compound-inspection | 文件系统巡检 |
+| evaluator | 评估器：质疑+结构化反馈 |
+| analogy | 比喻：用户理解桥梁 |
+| translator | 翻译：需求→文档 |
+| planner | 规划：分步 task 方案 |
+| agent-interaction | 智能体交互：多代理协调 |
+
+### 历史 compound skill
+
+旧版 compound 系统遗留 skill，按需安装。
+
+| Skill | 用途 |
+|-------|------|
+| compound-ingestion-conversation | 对话摄取 |
+| compound-digestion-extract-concepts | 概念提取消化 |
+| compound-digestion-map-concepts | 概念映射消化 |
+| compound-digestion-summary | 摘要消化 |
+| compound-digestion-update-index | 索引更新消化 |
+| compound-output-knowledge | 知识层输出 |
+| compound-output-project | 项目层输出 |
+| compound-output-review | 复盘输出 |
+| compound-project-closure | 项目结项 |
+| compound-project-startup | 项目启动（历史版本） |
+
+### 系统 skill
+
+Hanako 系统自带 skill，按需安装。
+
+| Skill | 用途 |
+|-------|------|
+| companion-v2 | 认知伙伴 |
+| file-butler | 文件管理 |
+| manual-creator | 手动创建 |
+| plan-intake-protocol | 计划摄入协议 |
+| system-migration | 系统迁移 |
