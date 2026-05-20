@@ -10,6 +10,34 @@ source: compound
 
 用户说"启动新项目""开始做XX""立项""我想做XX"时加载此skill。
 
+## 项目结构规则
+
+```
+projects/<项目名>/
+├── startup.md     ← 启动配置（Agent 读取后执行）
+└── log/           ← 运行记录（Agent 每次执行后追加）
+```
+
+除 startup.md 和 log/ 外，项目目录不放任何文件。
+
+## startup.md 格式
+
+```yaml
+project: <名称>
+scope: <边界>
+
+prerequisites:
+  - <条件1>
+  - <条件2>
+
+steps:
+  - <步骤1>
+  - <步骤2>
+
+trigger:
+  - <可能触发的其他项目>
+```
+
 ## 执行流程
 
 1. 加载评估器skill、比喻skill、翻译skill、规划skill、智能体交互skill
@@ -29,6 +57,15 @@ source: compound
 
 写日志，触发消化skill总结项目经验，检查是否需要触发其他项目。
 
-## 产出的项目配置
+## 日志格式
 
-执行过程中逐步收敛信息后，写入 `projects/<项目名>/startup.md`。
+`log/` 文件命名 `YYYY-MM-DD-N.md`。三要素：做了什么、为什么、结果。
+
+## 新项目启动流程
+
+① 查 knowledge/system/ 和 knowledge/raw/ 获取设计参考
+② 搜索 GitHub 或相关文档获取外部规范
+③ 撰写 startup.md
+④ 确认 prerequisites 满足
+⑤ 执行
+⑥ 写日志
